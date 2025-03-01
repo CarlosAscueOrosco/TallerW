@@ -1,7 +1,14 @@
 package com.tallerweb.sda.service;
 
-import org.springframework.stereotype.Service;
+import com.tallerweb.sda.model.Beneficiario;
+import com.tallerweb.sda.model.Solicitud;
+import java.util.List;
+import java.util.Optional;
 
-@Service
-public class SolicitudService {
+public interface SolicitudService {
+    List<Solicitud> getAllSolicitudes();
+    Optional<Solicitud> getSolicitudById(Long id);
+    List<Solicitud> getSolicitudesByBeneficiario(Long beneficiarioId);
+    Solicitud saveSolicitud(Solicitud solicitud, Beneficiario beneficiario);
+    void deleteSolicitud(Long id);
 }

@@ -1,7 +1,13 @@
 package com.tallerweb.sda.service;
 
-import org.springframework.stereotype.Service;
+import com.tallerweb.sda.model.Beneficiario;
 
-@Service
-public class BeneficiarioService {
+import java.util.List;
+import java.util.Optional;
+
+public interface BeneficiarioService {
+    List<Beneficiario> getAllBeneficiarios();
+    Optional<Beneficiario> getBeneficiarioById(Long id);
+    Beneficiario saveBeneficiario(Beneficiario beneficiario);
+    void deleteBeneficiario(Long id);
 }
